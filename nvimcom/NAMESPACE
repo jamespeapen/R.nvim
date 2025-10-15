@@ -1,7 +1,8 @@
 export("Rnvim.source", "Rnvim.selection", "Rnvim.block", "Rnvim.paragraph",
        "Rnvim.function", "Rnvim.chunk", "nvim.list.args", "nvim.srcdir",
        "nvim.plot", "nvim.interlace.rnoweb",
-       "nvim.print", "nvim.names", "etags2ctags", "nvim.interlace.rmd", "vi")
+       "nvim.print", "nvim.names", "etags2ctags", "nvim.interlace.rmd", "vi",
+       "nvim.load_pkg", "nvim.document")
 
 importFrom("tools", "Rd2txt_options", "texi2dvi")
 importFrom("methods", "existsFunction", "isGeneric", "slotNames")

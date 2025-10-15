@@ -63,6 +63,8 @@ local map_desc = {
     RSetwd              = { m = "", k = "", c = "Command",  d = "Send to R setwd(<directory of current document>)" },
     RObjectStr          = { m = "", k = "", c = "Command",  d = "Send to R: str(<cword>)" },
     RSummary            = { m = "", k = "", c = "Command",  d = "Send to R: summary(<cword>)" },
+    RPkgLoad            = { m = "", k = "", c = "Command",  d = "Run 'devtools::load_all()` in the current working directory" },
+    RPkgDocument        = { m = "", k = "", c = "Command",  d = "Run 'devtools::document()` in the current working directory" },
     RKnitRmCache        = { m = "", k = "", c = "Weave",    d = "Delete files from knitr cache" },
     RMakePDFKb          = { m = "", k = "", c = "Weave",    d = "Knit the current document and generate a beamer presentation" },
     RMakeAll            = { m = "", k = "", c = "Weave",    d = "Knit the current document and generate all formats in the header" },
@@ -203,6 +205,10 @@ local control = function(file_type)
     create_maps("v",   "RSPlot",            "rb", "<Cmd>lua require('r.run').action('plotsumm', 'v')")
     create_maps("v",   "RDebug",            "bg", "<Cmd>lua require('r.run').action('debug', 'v')")
     create_maps("v",   "RUndebug",          "ud", "<Cmd>lua require('r.run').action('undebug', 'v')")
+
+    -- devtools
+    create_maps("ni",  "RPkgLoad",          "pl", "<Cmd>lua require('r.run').load_pkg()")
+    create_maps("ni",  "RPkgDocument",      "pr", "<Cmd>lua require('r.run').document()")
 
     -- Object Browser
     create_maps("nvi", "ROBToggle",         "ro", "<Cmd>lua require('r.browser').start()")

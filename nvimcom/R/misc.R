@@ -613,3 +613,17 @@ update_params <- function(fname) {
     .C(nvimcom_task)
     return(invisible(NULL))
 }
+
+nvim.load_pkg <- function() {
+    if (!require(devtools, quietly = TRUE)) {
+        stop("Please, install the 'devtools' package.")
+    }
+    devtools::load_all()
+}
+
+nvim.document <- function() {
+    if (!require(devtools, quietly = TRUE)) {
+        stop("Please, install the 'devtools' package.")
+    }
+    devtools::document()
+}

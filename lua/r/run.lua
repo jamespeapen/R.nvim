@@ -725,4 +725,12 @@ M.source_dir = function(dir)
     end
 end
 
+M.load_pkg = function()
+  send.cmd("nvim.load_pkg()")
+end
+
+M.document = function()
+  send.cmd("nvim.document()")
+end
+
 return M
